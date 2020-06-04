@@ -4,12 +4,13 @@ import { AppComponent } from './app.component';
 import { Routing } from "./app.routing";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ApiService } from "./service/api.service";
-import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { TokenInterceptor } from "./core/interceptor";
+import { HttpClientModule } from "@angular/common/http";
+import { ListMovieComponent } from './list-movie/list-movie.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListMovieComponent
   ],
   imports: [
     BrowserModule,
@@ -17,9 +18,6 @@ import { TokenInterceptor } from "./core/interceptor";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ApiService, {provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptor,
-    multi : true}],
   bootstrap: [AppComponent]
 })
 
