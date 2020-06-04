@@ -30,6 +30,10 @@ export class ApiService {
   }
 
   getGenders(): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + 'genre/movie/list/' + this.apiKey);
+    return this.http.get<ApiResponse>(this.baseUrl + 'genre/movie/list' + this.apiKey);
+  }
+
+  getSimilarMovies(): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl + 'movie/{movie_id}/similar' + this.apiKey);
   }
 }

@@ -6,17 +6,19 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { ApiService } from "./service/api.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ListMovieComponent } from './list-movie/list-movie.component';
+import { DetailsMovieComponent } from './details-movie/details-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListMovieComponent
+    ListMovieComponent,
+    DetailsMovieComponent,
   ],
   imports: [
     BrowserModule,
     Routing,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })
