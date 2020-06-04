@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   //eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOWVlMDA3Yzc4YmQ3MGMxN2Q4NGQ5NTNlMDQ2OThmMCIsInN1YiI6IjVlZDkwNjNjMWIxNTdkMDAxZjViZGJiNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RDZmezzx-tmQ-5bVRX88WvOk1yLZAEQBTABHziIrK7M
-  baseUrl: string = 'https://api.themoviedb.org/3/';
+  baseUrl: string = 'https://api.themoviedb.org/';
   apiKey: string = '?api_key=f9ee007c78bd70c17d84d953e04698f0';
   languageConfig: string = 'language=pt-BR';
 

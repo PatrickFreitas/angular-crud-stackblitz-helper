@@ -7,12 +7,16 @@ import { ApiService } from "./service/api.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ListMovieComponent } from './list-movie/list-movie.component';
 import { DetailsMovieComponent } from './details-movie/details-movie.component';
+import { ListPersonComponent } from './list-person/list-person.component';
+import { DetailsPersonComponent } from './details-person/details-person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListMovieComponent,
     DetailsMovieComponent,
+    ListPersonComponent,
+    DetailsPersonComponent,
   ],
   imports: [
     BrowserModule,

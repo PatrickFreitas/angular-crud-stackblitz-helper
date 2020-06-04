@@ -2,6 +2,7 @@ import { Genre } from './genre.model';
 import { ProductionCompany } from './production-company.model';
 import { ProductionCountry } from './production-country.model';
 import { SpokenLanguage } from './spoken-language.model';
+import { Person } from './person.model';
 
 export class Movie {
     adult: boolean;
@@ -29,4 +30,5 @@ export class Movie {
     video: boolean;
     vote_average: number;
     vote_count: number;
+    persons: Person[];
 }
