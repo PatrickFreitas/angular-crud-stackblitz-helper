@@ -15,6 +15,7 @@ export class ListMovieComponent implements OnInit {
   constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
+    console.log("[INITIALIZE] list-movie-component");
     // Alterar para busca de imóveis por ordem alfabética
     // Verificar se API suporta tal funcionalidade
     this.apiService.getDiscoverMovies()

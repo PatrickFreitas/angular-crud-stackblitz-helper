@@ -10,6 +10,7 @@ export class ListPersonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("[INITIALIZE] list-person-component");
   }
 
 }

@@ -1,0 +1,23 @@
+body {
+  font-family: "Helvetica Neue", Arial;
+}
+
+.navbar-default {
+  width: 100%;
+  z-index: 5050;
+  background-color: #393939;
+  height: 60px;
+  box-sizing: border-box;
+  border-top: 3px solid #f48024;
+  border-bottom: 3px solid #393939;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-text {
+  color: #f1f1f1;
+  font-size: 19px;
+}

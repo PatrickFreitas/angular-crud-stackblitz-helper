@@ -17,6 +17,7 @@ export class DetailsMovieComponent implements OnInit {
   constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
+    console.log("[INITIALIZE] details-movie-component");
     // Alterar para busca de imóveis por ordem alfabética
     // Verificar se API suporta tal funcionalidade
     this.apiService.getMovieById(this.id)

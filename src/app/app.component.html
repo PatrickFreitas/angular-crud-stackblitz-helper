@@ -1,15 +1,25 @@
-Angular crud
-
-<br>
-
-Plataform on progress
-
-<br>
-<br>
-
-<nav>
-  <ul>
-    <li><a routerLink="/list-movie" routerLinkActive="active">Lista de filmes / Component</a></li>
-    <li><a routerLink="/details-movie" routerLinkActive="active">Detalhes do filme / Component</a></li>
-  </ul>
+<nav class="navbar navbar-default navbar-static-top v-center">
+  <div class="container">
+    <p class="navbar-text navbar-left"> Angular CRUD </p>
+    <div class="navbar-form navbar-right">
+      <!-- <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div> -->
+    </div>
+  </div>
 </nav>
+
+<div class="container">
+  <nav>
+    <ul>
+      <li><a routerLink="/filmes" routerLinkActive="active">Lista de filmes / Component</a></li>
+      <li><a routerLink="/details-movie" routerLinkActive="active">Detalhes do filme / Component</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<router-outlet> </router-outlet>

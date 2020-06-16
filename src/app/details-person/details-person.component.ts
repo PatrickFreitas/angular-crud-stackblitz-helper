@@ -10,6 +10,7 @@ export class DetailsPersonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("[INITIALIZE] details-person-component");
   }
 
 }
