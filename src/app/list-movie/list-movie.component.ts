@@ -9,8 +9,10 @@ import { ApiService } from "../service/api.service";
   styleUrls: ['./list-movie.component.css']
 })
 export class ListMovieComponent implements OnInit {
-  
-  moviesList: Movie[];
+
+  moviesList: any[] = [];
+  pageQuantity: number;
+  currentPage: number;
 
   constructor(private router: Router, private apiService: ApiService) { }
 
@@ -20,7 +22,11 @@ export class ListMovieComponent implements OnInit {
     // Verificar se API suporta tal funcionalidade
     this.apiService.getDiscoverMovies()
       .subscribe( data => {
-        this.moviesList = data.result;
+        this.currentPage = data.page;
+        this.pageQuantity = data.total_pages;
+        data.results.forEach(item => {
+          this.moviesList.push(item);
+        })
       });
   }
 
