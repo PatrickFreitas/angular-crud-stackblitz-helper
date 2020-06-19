@@ -20,7 +20,7 @@ export class ListMovieComponent implements OnInit {
     console.log("[INITIALIZE] list-movie-component");
     // Alterar para busca de imóveis por ordem alfabética
     // Verificar se API suporta tal funcionalidade
-    this.apiService.getDiscoverMovies()
+    this.apiService.getPopularMovies()
       .subscribe( data => {
         this.currentPage = data.page;
         this.pageQuantity = data.total_pages;

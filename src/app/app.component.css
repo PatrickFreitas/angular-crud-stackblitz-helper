@@ -5,11 +5,12 @@ body {
 .navbar-default {
   width: 100%;
   z-index: 5050;
-  background-color: #393939;
   height: 60px;
+  position: fixed;
   box-sizing: border-box;
-  border-top: 3px solid #f48024;
-  border-bottom: 3px solid #393939;
+  border-color: #030913;
+  background-color: #030913;
+  box-shadow: 0 2px 10px #000;
 }
 
 .v-center {
@@ -20,4 +21,8 @@ body {
 .navbar-text {
   color: #f1f1f1;
   font-size: 19px;
+}
+
+.top-spaced {
+  margin-top: 90px;
 }

@@ -1,6 +1,15 @@
-h1 {
+h3 {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 700;
+  font-size: 22px;
+  word-wrap: break-word;
+  color: #fff;
+  margin-top: 0;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.icon-title {
+  margin-left: 15px;
 }
 .card {
   float: left;
