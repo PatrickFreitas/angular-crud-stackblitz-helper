@@ -1,19 +1,19 @@
-<div class="container">
-  <nav>
-    <ul>
-      <li><a routerLink="/filmes" routerLinkActive="active">Lista de filmes / Component</a></li>
-      <li><a routerLink="/details-movie" routerLinkActive="active">Detalhes do filme / Component</a></li>
-    </ul>
-  </nav>
+<div class="row">
+  <div class="col-md-12">
+    <h3> Populares <i class="fa fa-arrow-right icon-title"></i> </h3>
+  </div>
+  <div class="card gallery-card" *ngFor="let movie of moviesList">
+    <div class="wrapper">
+      <img class="banner" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+      <div class="data">
+        <div class="content">
+          <span class="author">{{movie.author}}</span>
+          <p class="text">{{movie.overview}}</p>
+          <a [routerLink]="['/detalhes',movie.id]" class="button">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="slider-carousel-1">
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-</div>
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>

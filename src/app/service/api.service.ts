@@ -17,12 +17,12 @@ export class ApiService {
     return this.http.get<ApiResponse>(this.baseUrl + 'movie/latest' + this.apiKey);
   }
 
-  getPopularMovies() : Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + 'movie/popular' + this.apiKey + this.languageConfig);
+  getPopularMovies(page: number) : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl + 'movie/popular' + this.apiKey + this.languageConfig + '&page=' + page);
   }
 
   getMovieById(id: number): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + id + this.apiKey);
+    return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + id + this.apiKey + this.languageConfig);
   }
 
   getMovieByGender(gender: Gender): Observable<ApiResponse> {

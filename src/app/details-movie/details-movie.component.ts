@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from "../model/movie.model";
 import { ApiService } from "../service/api.service";
 
@@ -11,18 +11,22 @@ import { ApiService } from "../service/api.service";
 export class DetailsMovieComponent implements OnInit {
 
   id: number;
-  currentMovie: Movie;
+  movie: Movie;
   moviesSimilar: Movie[];
 
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private router: Router, 
+    private route: ActivatedRoute,
+    private apiService: ApiService) { }
 
   ngOnInit() {
     console.log("[INITIALIZE] details-movie-component");
+    this.id = this.route.snapshot.params.id;
+    
     // Alterar para busca de imóveis por ordem alfabética
     // Verificar se API suporta tal funcionalidade
     this.apiService.getMovieById(this.id)
       .subscribe( data => {
-        this.currentMovie = data.result;
+        this.movie = data;
       });
   }
 
