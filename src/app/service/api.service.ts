@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Gender } from "../model/gender.model";
+import { Movie } from "../model/movie.model";
 import { Observable } from "rxjs/index";
 import { ApiResponse } from "../model/api.response";
 
@@ -21,8 +22,11 @@ export class ApiService {
     return this.http.get<ApiResponse>(this.baseUrl + 'movie/popular' + this.apiKey + this.languageConfig + '&page=' + page);
   }
 
-  getMovieById(id: number): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + id + this.apiKey + this.languageConfig);
+  getMovieById(id: number, useLanguageConfig : boolean): Observable<ApiResponse> {
+    if(useLanguageConfig)
+      return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + id + this.apiKey + this.languageConfig);
+    else
+      return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + id + this.apiKey);
   }
 
   getMovieByGender(gender: Gender): Observable<ApiResponse> {
@@ -35,5 +39,9 @@ export class ApiService {
 
   getSimilarMovies(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl + 'movie/{movie_id}/similar' + this.apiKey);
+  }
+
+  getPersonsByMovie(movie: Movie): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + movie.id + '/credits' + this.apiKey);
   }
 }

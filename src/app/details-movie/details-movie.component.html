@@ -1,1 +1,43 @@
-{{movie.title}}
+<div class="row">
+  <div class="detail-card col-md-12">
+    <div class="wrapper">
+		 <div class="image">
+			 <img class="book-image" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+		 </div>
+      <div class="data">
+        <div class="content">
+          <span class="author">{{movie.author}}</span>
+          <h1 class="title">{{movie.title}}</h1>
+          <span *ngFor="let gender of movie.genres" class="gender-span"> {{gender.name}} </span>
+          <p class="text">{{movie.overview}}</p>
+          <p class="text"> Data de lançamento: {{movie.release_date}}</p>
+          <p class="text"> Duração do filme: {{movie.runtime}} minutos</p>
+          <button class="{{isUnfav == true ? 'clickable-icon clicked' : 'clickable-icon' }}" (click)="notFavClick()">
+            <i class="far fa-thumbs-down"></i>
+          </button>
+          <button  class="{{isFav == true ? 'clickable-icon clicked' : 'clickable-icon' }}"  (click)="favClick()">
+          <i class="far fa-thumbs-up"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3> Pessoas envolvidas </h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="person-card col-md-2" *ngFor="let person of persons">
+    <img *ngIf="person.profile_path" class="banner" src="https://image.tmdb.org/t/p/w500/{{person.profile_path}}" />
+    <img *ngIf="!person.profile_path" class="banner" src="https://www.daviespaints.com.ph/wp-content/uploads/img/color-ideas/ready-mixed-colors/acreex-colors/ACX-61-VELVET-GRAY.png" />
+    <div class="data">
+      <div class="content">
+        <span class="author">{{person.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>
