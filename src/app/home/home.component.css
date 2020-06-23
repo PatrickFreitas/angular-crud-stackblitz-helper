@@ -12,9 +12,7 @@ h3 {
   margin-left: 15px;
 }
 .card {
-  float: left;
   padding: 1rem 1.7rem;
-  width: 25%;
 }
 .card .menu-content {
   margin: 0;

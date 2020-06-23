@@ -44,4 +44,8 @@ export class ApiService {
   getPersonsByMovie(movie: Movie): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + movie.id + '/credits' + this.apiKey);
   }
+  
+  searchByTitle(title: string): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + this.apiKey + '&query=' + title);
+  }
 }

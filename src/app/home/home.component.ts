@@ -23,13 +23,6 @@ export class HomeComponent implements OnInit {
     this.pushPagePopularMovies(1);
   }
 
-  searchMovie(title: string): void {
-    this.apiService.getLastestMovies()
-      .subscribe( data => {
-        this.moviesList = this.moviesList.filter(u => u.title == title);
-      })
-  };
-
   pushPagePopularMovies(page: number) {
     this.apiService.getPopularMovies(page)
       .subscribe( data => {
