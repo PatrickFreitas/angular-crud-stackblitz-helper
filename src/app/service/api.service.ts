@@ -45,9 +45,9 @@ export class ApiService {
     return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + movie.id + '/credits' + this.apiKey);
   }
   
-  searchByTitle(title: string): Observable<ApiResponse> {
+  searchByTitle(title: string, page: number): Observable<ApiResponse> {
     if(title != null && title != "")
-      return this.http.get<ApiResponse>(this.baseUrl + 'search/movie/' + this.apiKey + '&query=' + title);
+      return this.http.get<ApiResponse>(this.baseUrl + 'search/movie' + this.apiKey + '&query=' + title + '&page=' + page);
     else
       return null;
   }
