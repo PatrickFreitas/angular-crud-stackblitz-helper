@@ -10,7 +10,6 @@ import { ApiService } from "../service/api.service";
 })
 export class SearchMovieComponent implements OnInit {
 
-  title: string = "";
   moviesList: any[] = [];
 
   constructor(private router: Router, private apiService: ApiService) { }
@@ -20,7 +19,8 @@ export class SearchMovieComponent implements OnInit {
 
   
   searchMovie(title: string): void {
-    this.apiService.searchByTitle(this.title)
+    console.log("searching-movie " + title);
+    this.apiService.searchByTitle(title)
       .subscribe( data => {
         this.moviesList = data;
       })

@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-md-12">
-    <input type="text" />
+    <input type="text" class="search-input" placeholder="Busque aqui o título do filme" (input)="searchMovie($event.target.value)" />
   </div>
   <div class="col-md-12">
     <h3> Resultados <i class="fa fa-arrow-right icon-title"></i> </h3>
   </div>
-  <div class="card col-md-3 gallery-card" *ngFor="let movie of moviesList">
+  <div class="card col-md-4 col-sm-12 col-lg-3 gallery-card" *ngFor="let movie of moviesList">
     <div class="wrapper">
       <img class="banner" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
       <div class="data">

@@ -7,7 +7,7 @@ import { ApiService } from "./service/api.service";
 import { HttpClientModule } from "@angular/common/http";
 import { DetailsMovieComponent } from './details-movie/details-movie.component';
 import { HomeComponent } from './home/home.component';
-import { SearchMovieComponent } from '../search-movie/search-movie.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 @NgModule({
   declarations: [
