@@ -37,9 +37,9 @@ export class DetailsMovieComponent implements OnInit {
               this.movie = data;
             });
 
-        if(localStorage.getItem(this.movie.id.toString()) == 'true')
+        if(localStorage.getItem('movie-' + this.movie.id.toString()) == 'true')
           this.isFav = true;
-        if(localStorage.getItem(this.movie.id.toString()) == 'false')
+        if(localStorage.getItem('movie-' + this.movie.id.toString()) == 'false')
           this.isUnfav = true;
           
         this.apiService.getPersonsByMovie(this.movie)
@@ -59,11 +59,11 @@ export class DetailsMovieComponent implements OnInit {
   favClick() : void {
     this.isUnfav = false;
     
-    if(localStorage.getItem(this.movie.id.toString()) == 'true') {
-      localStorage.removeItem(this.movie.id.toString())
+    if(localStorage.getItem('movie-' + this.movie.id.toString()) == 'true') {
+      localStorage.removeItem('movie-' + this.movie.id.toString())
       this.isFav = false;
     } else {
-      localStorage.setItem(this.movie.id.toString(), 'true');
+      localStorage.setItem('movie-' + this.movie.id.toString(), 'true');
       this.isFav = true;
     }
   }
@@ -71,11 +71,11 @@ export class DetailsMovieComponent implements OnInit {
   notFavClick() : void {
     this.isFav = false;
     
-    if(localStorage.getItem(this.movie.id.toString()) == 'false') {
-      localStorage.removeItem(this.movie.id.toString())
+    if(localStorage.getItem('movie-' + this.movie.id.toString()) == 'false') {
+      localStorage.removeItem('movie-' + this.movie.id.toString())
       this.isUnfav = false;
     } else {
-      localStorage.setItem(this.movie.id.toString(), 'false');
+      localStorage.setItem('movie-' + this.movie.id.toString(), 'false');
       this.isUnfav = true;
     }
   }

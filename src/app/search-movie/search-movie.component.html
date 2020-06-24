@@ -1,10 +1,11 @@
 <div class="row">
   <div class="col-md-12">
     <input type="text" class="search-input" placeholder="Busque aqui o título do filme" (input)="searchMovie($event.target.value)" />
+  </div>  
+  <div class="card col-sm-offset-3 col-sm-6" *ngIf="moviesList.length == 0">
+    <p class="empty-warning"> <i class="fas fa-exclamation-circle"></i> <br> Ops, Não há filmes disponíveis para essa busca. </p>
   </div>
-  <div class="col-md-12">
-    <h3> Resultados </h3>
-  </div>
+
   <div class="card col-md-4 col-sm-12 col-lg-3 gallery-card" *ngFor="let movie of moviesList">
     <div class="wrapper">
       <img class="banner" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />

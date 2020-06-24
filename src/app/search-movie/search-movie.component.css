@@ -171,3 +171,19 @@ h3 {
   transform: translate(5px, -50%);
   opacity: 1;
 }
+
+.empty-warning {
+  background: #030913;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+.empty-warning svg {
+  font-size: 38px;
+  margin: 15px;
+  display: inline-block;
+}

@@ -1,0 +1,20 @@
+<div class="row"  *ngFor="let movie of moviesList">
+  <div class="detail-card col-md-12">
+    <div class="wrapper">
+		 <div class="image">
+			 <img class="book-image" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+		 </div>
+      <div class="data">
+        <div class="content">
+          <span class="author">{{movie.author}}</span>
+          <h1 class="title">{{movie.title}}</h1>
+          <span *ngFor="let gender of movie.genres" class="gender-span"> {{gender.name}} </span>
+          <p class="text">{{movie.overview}}</p>
+          <p class="text"> Data de lançamento: {{movie.release_date}}</p>
+          <p class="text"> Duração do filme: {{movie.runtime}} minutos</p>
+          <a [routerLink]="['/detalhes',movie.id]" class="text-right">Ver mais <i class="fa fa-arrow-right"> </i> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
