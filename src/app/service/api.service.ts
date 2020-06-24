@@ -30,10 +30,10 @@ export class ApiService {
   }
 
   getMovieByGender(gender: Gender): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + 'movie/' + gender.id + this.apiKey);
+    return this.http.get<ApiResponse>(this.baseUrl + 'discover/movie' + this.apiKey + '&with_genres=' + gender.title);
   }
 
-  getGenders(): Observable<ApiResponse> {
+  getGenres(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl + 'genre/movie/list' + this.apiKey);
   }
 
@@ -47,7 +47,7 @@ export class ApiService {
   
   searchByTitle(title: string, page: number): Observable<ApiResponse> {
     if(title != null && title != "")
-      return this.http.get<ApiResponse>(this.baseUrl + 'search/movie' + this.apiKey + '&query=' + title + '&page=' + page);
+      return this.http.get<ApiResponse>(this.baseUrl + 'search/movie' + this.apiKey + '&query=' + title + this.languageConfig + '&page=' + page);
     else
       return null;
   }
