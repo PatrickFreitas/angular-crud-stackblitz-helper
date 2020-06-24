@@ -2,7 +2,8 @@
   <div class="detail-card col-md-12">
     <div class="wrapper">
 		 <div class="image">
-			 <img class="book-image" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+      <img *ngIf="movie.poster_path" class="book-image" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+      <img *ngIf="!movie.poster_path" class="book-image" src="https://www.daviespaints.com.ph/wp-content/uploads/img/color-ideas/ready-mixed-colors/acreex-colors/ACX-61-VELVET-GRAY.png" />
 		 </div>
       <div class="data">
         <div class="content">

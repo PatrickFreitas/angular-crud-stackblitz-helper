@@ -4,7 +4,8 @@
   </div>
   <div class="card col-md-4 col-sm-12 col-lg-3 gallery-card" *ngFor="let movie of moviesList">
     <div class="wrapper">
-      <img class="banner" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+      <img *ngIf="movie.poster_path" class="banner" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+      <img *ngIf="!movie.poster_path" class="banner" src="https://www.daviespaints.com.ph/wp-content/uploads/img/color-ideas/ready-mixed-colors/acreex-colors/ACX-61-VELVET-GRAY.png" />
       <div class="data">
         <div class="content">
           <span class="author">{{movie.author}}</span>
